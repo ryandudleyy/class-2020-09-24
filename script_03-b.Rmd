@@ -58,6 +58,21 @@ d) Write down some thoughts about what might explain these increases and decreas
 
 See [here](https://rpubs.com/dkane/week-3) for my answers. No need to copy exactly what I have done! Make yours better.
 
+```{r s1}
+
+sep_diff <- inner_join(sep_new, sep_old, by = "id", suffix = c(".new", ".old")) %>%
+  filter(u_grad.new >= 10 & u_grad.old >= 10) %>%
+  mutate(diff = u_grad.new - u_grad.old)
+
+largedrop <- sep_diff %>%
+  arrange(diff) %>%
+  slice(1:5)
+
+largeinc <- sep_diff %>%
+  arrange(desc(diff)) %>%
+  slice(1:5)
+
+``` 
 
 
 ## Scene 2

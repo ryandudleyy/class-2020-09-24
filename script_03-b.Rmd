@@ -84,7 +84,17 @@ ggplot(data = course_10, mapping = aes(x = title.new, y = diff, fill = departmen
 
 # employed new table tactics
 
-largedrop %>% gt()
+largerdrop <- largedrop %>%
+  select(id, title.new, name.new, department.new, u_grad.new, u_grad.old, diff)
+
+largerdrop %>% 
+  gt() %>%
+  tab_header(title = 
+               "Highest Drops and Gains in Harvard Classes",
+             subtitle = "From 9/1/2020 - 9/22/2020") %>%
+  cols_label(department.new = "Department", 
+             title.new = "Class Title", 
+             )
 
 # Some classes may have been dropped due to excessive workload
 

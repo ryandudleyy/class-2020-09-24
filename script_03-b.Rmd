@@ -74,9 +74,12 @@ largeinc <- sep_diff %>%
   arrange(desc(diff)) %>%
   slice(1:5)
 
-course_10 <- rbind(largedrop, largeinc)
+course_10 <- rbind(largedrop, largeinc) %>%
+  select(id, title.new, department.new, diff)
 
-ggplot(data = course_10, mapping = aes(x = ))
+ggplot(data = course_10, mapping = aes(x = title.new, y = diff, fill = department.new)) +
+  geom_col() + 
+  theme(axis.text.x = element_text(angle = 90))
 
 
 # employed new table tactics

@@ -60,6 +60,8 @@ See [here](https://rpubs.com/dkane/week-3) for my answers. No need to copy exact
 
 ```{r s1}
 
+# copy-pasted previous class' code; created new objects
+
 sep_diff <- inner_join(sep_new, sep_old, by = "id", suffix = c(".new", ".old")) %>%
   filter(u_grad.new >= 10 & u_grad.old >= 10) %>%
   mutate(diff = u_grad.new - u_grad.old)
@@ -71,6 +73,10 @@ largedrop <- sep_diff %>%
 largeinc <- sep_diff %>%
   arrange(desc(diff)) %>%
   slice(1:5)
+
+course_10 <- rbind(largedrop, largeinc)
+
+course_10 %>% gt()
 
 ``` 
 

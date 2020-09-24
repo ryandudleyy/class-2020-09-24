@@ -76,7 +76,24 @@ largeinc <- sep_diff %>%
 
 course_10 <- rbind(largedrop, largeinc)
 
-course_10 %>% gt()
+ggplot(data = course_10, mapping = aes(x = ))
+
+
+# employed new table tactics
+
+largedrop %>% gt()
+
+# Some classes may have been dropped due to excessive workload
+
+# "cough cough"
+
+# Some classes may have met at poor times; sections change matters
+
+# some students may have signed up for classes they did not enjoy
+
+# some students could drop from higher classes to lower classes
+
+# some students could get recommendations from new courses
 
 ``` 
 
@@ -89,6 +106,13 @@ With our actual Preceptor Table, how might we investigate the effect of work ass
 
 Make a spreadsheet --- I recommend using Google sheets, but anything will do --- which shows a simple version of that actual Preceptor Table. What are the units? What are the outcomes? What is the treatment? What is the causal effect? You may assign whichever of the 10 classes you like to treatment and the rest to control.
 
+
+
+```{r s2}
+
+
+
+``` 
 ## Scene 3
 
 **Prompt:** Dean Claybaugh does a survey and discovers that 100 of the 500 courses at Harvard gave "lots" of work in the first weeks of class and 400 of the courses gave a "normal" amount of work.
